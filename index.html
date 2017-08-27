@@ -6,29 +6,86 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript">function nana(){
-            var nombre=$('#nombre').val();
-            $('h1').html('Hello Word'+nombre+'!');
-        }</script>
+        <title>Calculadora</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Hello World!</h1> 
-        <label>Digite su nombre:</label>
-        <input type="text" id="nombre"/>
-        <button>espiche aqui</button>
-        <div id="porcentaje" onclick="nana()"><label>Digite</label></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        
-        
-        
+        <div>Calculadora</div>
+        <form name="calc">
+            <input type="label" name="ans" value="" disabled="true">
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th><input type="button" value="%" onclick="document.calc.ans.value+='%'"></th>
+                         <th><input type="button" value="raiz" onclick="document.calc.ans.value=raiz(document.calc.ans.value)"> </th>
+                        <th><input type="button" value="x2" onclick="document.calc.ans.value=elevar(document.calc.ans.value)">  </th>
+                         <th><input type="button" value="1/x" onclick= "document.calc.ans.value=evalu(document.calc.ans.value)">  </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                       <th><input type="reset" value="CE" >  </th>
+                        <th><input type="reset" value="C">  </th>
+                        <th><input type="reset" value="borrar" >  </th>
+                        <th><input type="button" value="/" onclick="document.calc.ans.value+='/'">  </th>
+
+                    </tr>
+                    <tr>
+                        <th><input type="button" value="7" onclick="document.calc.ans.value+='7'">  </th>
+                         <th><input type="button" value="8" onclick="document.calc.ans.value+='8'">  </th>
+                          <th><input type="button" value="9" onclick="document.calc.ans.value+='9'">  </th>
+                           <th><input type="button" value="x" onclick="document.calc.ans.value+='*'">  </th>
+                    </tr>
+                    <tr> 
+                         <th><input type="button" value="4" onclick="document.calc.ans.value+='4'">  </th>
+                          <th><input type="button" value="5" onclick="document.calc.ans.value+='5'">  </th>
+                           <th><input type="button" value="6" onclick="document.calc.ans.value+='6'">  </th>
+                            <th><input type="button" value="-" onclick="document.calc.ans.value+='-'">  </th>
+                        
+                    </tr>
+                    <tr> 
+                        <th><input type="button" value="1" onclick="document.calc.ans.value+='1'">  </th>
+                         <th><input type="button" value="2" onclick="document.calc.ans.value+='2'">  </th>
+                          <th><input type="button" value="3" onclick="document.calc.ans.value+='3'">  </th>
+                           <th><input type="button" value="+" onclick="document.calc.ans.value+='+'">  </th>
+
+                        
+                    </tr>
+                    <tr> 
+                         <th><input type="button" value="+-" onclick="document.calc.ans.value=signo(document.calc.ans.value)">  </th>>
+                          <th><input type="button" value="0" onclick="document.calc.ans.value+='0'">  </th>
+                           <th><input type="button" value="," onclick="document.calc.ans.value+=','">  </th>
+                            <th><input type="button" value="=" onClick="document.calc.ans.value=eval(document.calc.ans.value)"> </th>
+                        
+                    </tr>
+
+
+                </tbody>
+            </table>
+            <script src= "https://code.jquery.com/jquery-3.2.1.min.js"></script>
+            <script type="text/javascript">
+            function evalu(a){
+                    return 1/a 
+               }
+                </script>
+
+                <script type="text/javascript">
+                    function raiz(a){
+                        return Math.sqrt(a)
+                    }
+
+                </script>
+                <script type="text/javascript">
+                    function elevar(a){
+                        return Math.pow(a,2)
+                    }
+                </script>
+                <script type="text/javascript">
+                    function signo(a){
+                        return (a*-1)
+                    }
+                </script>
+        </form>
     </body>
 </html>
